@@ -1,17 +1,10 @@
 import * as React from 'react';
+import Container from './containers/index';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <Container />
+  </div>
+);
 
 export default App;
