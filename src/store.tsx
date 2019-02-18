@@ -1,5 +1,5 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
-import reducer from './modules/module';
+import reducer, { MainState, MainActions } from './modules/module';
 
 const composeEnhancers = compose;
 
@@ -12,3 +12,9 @@ const configureStore = () =>
   );
 
 export default configureStore;
+
+export type ReduxState = {
+  reducer: MainState;
+};
+
+export type ReduxAction = MainActions;
