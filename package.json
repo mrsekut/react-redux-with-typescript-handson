@@ -8,7 +8,9 @@
     "@types/react-dom": "^16.8.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-redux": "^6.0.0",
     "react-scripts": "2.1.5",
+    "redux": "^4.0.1",
     "typescript": "^3.3.3"
   },
   "scripts": {
@@ -26,5 +28,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/react-redux": "^7.0.1"
+  }
 }
