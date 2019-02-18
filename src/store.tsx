@@ -1,16 +1,9 @@
-import {
-  createStore,
-  combineReducers,
-  Action,
-  Store,
-  compose,
-  applyMiddleware
-} from 'redux';
-import reducer, { CounterActions, CounterState } from './modules/module';
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+import reducer from './modules/module';
 
 const composeEnhancers = compose;
 
-export const configureStore = (): Store =>
+const configureStore = () =>
   createStore(
     combineReducers({
       reducer
@@ -19,9 +12,3 @@ export const configureStore = (): Store =>
   );
 
 export default configureStore;
-
-export interface ReduxState {
-  reducer: CounterState;
-}
-
-export type ReduxAction = CounterActions | Action;
