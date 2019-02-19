@@ -9,7 +9,7 @@
     "jsx": "preserve",
     "moduleResolution": "node",
     "rootDir": "src",
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

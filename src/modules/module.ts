@@ -34,7 +34,7 @@ const reducer: Reducer<MainState, MainActions> = (
     case ActionTypes.DEC:
       return { ...state, num: state.num - action.payload.amount };
     default:
-      // const _: never = action;
+      const _: never = action;
       return state;
   }
 };
