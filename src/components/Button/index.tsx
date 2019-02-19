@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 type ButtonProps = {
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactChild;
 };
 
-const Button: React.FC<ButtonProps> = ({ onClick, children }) => (
+const Button: React.FC<Readonly<ButtonProps>> = ({ onClick, children }) => (
   <button onClick={onClick} type="button">
     {children}
   </button>

@@ -7,7 +7,7 @@ export interface MainState {
   readonly num: number;
 }
 
-const initialState = { num: 0 };
+const initialState: MainState = { num: 0 };
 
 // Action Types
 // =============================
@@ -20,9 +20,9 @@ enum ActionTypes {
 // Reducer
 // =============================
 
-export type MainActions =
-  | ReturnType<typeof incrementAmount>
-  | ReturnType<typeof decrementAmount>;
+export type MainActions = ReturnType<
+  typeof incrementAmount | typeof decrementAmount
+>;
 
 const reducer: Reducer<MainState, MainActions> = (
   state = initialState,
@@ -34,7 +34,7 @@ const reducer: Reducer<MainState, MainActions> = (
     case ActionTypes.DEC:
       return { ...state, num: state.num - action.payload.amount };
     default:
-      const _: never = action;
+      // const _: never = action;
       return state;
   }
 };
@@ -47,13 +47,13 @@ export default reducer;
 export const incrementAmount = (amount: number) => ({
   type: ActionTypes.INC as ActionTypes.INC,
   payload: {
-    amount
+    amount: amount
   }
 });
 
 export const decrementAmount = (amount: number) => ({
   type: ActionTypes.DEC as ActionTypes.DEC,
   payload: {
-    amount
+    amount: amount
   }
 });

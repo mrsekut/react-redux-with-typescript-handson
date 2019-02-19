@@ -1,18 +1,26 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { decrementAmount, incrementAmount } from '../modules/module';
 import Counter from '../components/Counter';
 import Button from '../components/Button';
+import { ReduxState, ReduxAction } from '../store';
 
-const mapStateToProps = (state: any) => ({
-  num: state.reducer.num
+type ContaienrProps = ReturnType<typeof mapStateToProps> &
+  ReturnType<typeof mapDispatchToProps>;
+
+const mapStateToProps = ({ reducer }: ReduxState) => ({
+  ...reducer
 });
 
-const mapDispatchToProps = (dispatch: any) =>
-  bindActionCreators({ decrementAmount, incrementAmount }, dispatch);
+const mapDispatchToProps = (dispatch: Dispatch<ReduxAction>) =>
+  bindActionCreators({ incrementAmount, decrementAmount }, dispatch);
 
-const Container = ({ num, incrementAmount, decrementAmount }: any) => (
+const Container: React.FC<ContaienrProps> = ({
+  num,
+  incrementAmount,
+  decrementAmount
+}) => (
   <>
     <div>Counter</div>
     <Counter num={num} />
