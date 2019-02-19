@@ -5,12 +5,12 @@ import { decrementAmount, incrementAmount } from '../modules/module';
 import Counter from '../components/Counter';
 import Button from '../components/Button';
 
-const mapStateToProps = (state: any) => ({
-  num: state.reducer.num
+const mapStateToProps = ({ reducer }: any) => ({
+  ...reducer
 });
 
 const mapDispatchToProps = (dispatch: any) =>
-  bindActionCreators({ decrementAmount, incrementAmount }, dispatch);
+  bindActionCreators({ incrementAmount, decrementAmount }, dispatch);
 
 const Container = ({ num, incrementAmount, decrementAmount }: any) => (
   <>
