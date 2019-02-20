@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 type CounterProps = {
-  readonly num: number;
+  num: number;
 };
 
 const Counter: React.FC<Readonly<CounterProps>> = ({ num }) => <div>{num}</div>;

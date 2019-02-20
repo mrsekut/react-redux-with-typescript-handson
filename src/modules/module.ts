@@ -47,13 +47,13 @@ export default reducer;
 export const incrementAmount = (amount: number) => ({
   type: ActionTypes.INC as ActionTypes.INC,
   payload: {
-    amount: amount
+    amount
   }
 });
 
 export const decrementAmount = (amount: number) => ({
   type: ActionTypes.DEC as ActionTypes.DEC,
   payload: {
-    amount: amount
+    amount
   }
 });
